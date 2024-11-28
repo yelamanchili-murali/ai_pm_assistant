@@ -67,3 +67,9 @@ python app.py
 This will execute the script using the configuration specified in your .env file.
 
 Replace the placeholder values in the .env file with your actual values before running the application.
+
+## Screenshot
+
+Here is a screenshot of the application in action:
+
+![AI PM Assistant Screenshot](images/screenshot.png)
