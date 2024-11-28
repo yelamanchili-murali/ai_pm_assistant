@@ -3,7 +3,6 @@ from azure.cosmos import CosmosClient, PartitionKey
 from azure.identity import DefaultAzureCredential,get_bearer_token_provider
 from numpy import dot
 from numpy.linalg import norm
-import gradio as gr
 import time
 from dotenv import load_dotenv
 import os
@@ -163,39 +162,3 @@ def chat():
 # Example usage
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
-
-
-    # # Example project description
-    # planned_project_description = """
-    # Design and commissioning of new rolling stock trains for a metropolitan transit system. The project involves tight timelines, multiple stakeholders, and unionized labor.
-    # """
-
-    # chat_history = []
-
-    # app = FastAPI()
-
-    # with gr.Blocks(fill_height=True, fill_width=True) as demo:
-    #     chatbot = gr.Chatbot(label="AI PM Assistant", scale=5)
-    #     msg = gr.Textbox(label="Ask me about generating risk profiles for Projects!", scale=1)
-    #     clear = gr.Button("Clear", scale=0)
-
-    #     def user(user_message, chat_history):
-    #         start_time = time.time()
-    #         response_payload = generate_risk_profile(user_message)
-    #         end_time = time.time()
-    #         elapsed_time = round((end_time - start_time) * 1000, 2)
-    #         details = f"\n (Time: {elapsed_time}ms)"
-    #         chat_history.append([user_message, response_payload + details])
-            
-    #         return gr.update(value=""), chat_history
-        
-    #     msg.submit(user, [msg, chatbot], [msg, chatbot], queue=False)
-    #     clear.click(lambda: None, None, chatbot, queue=False)
-
-    # app = gr.mount_gradio_app(app, demo, path="/")
-
-    # # Launch the Gradio interface
-    # demo.launch(debug=True)
-
-    # # Be sure to run this cell to close or restart the Gradio demo
-    # demo.close()
