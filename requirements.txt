@@ -1,0 +1,7 @@
+openai
+azure-cosmos
+azure-identity
+numpy
+gradio
+pandas
+python-dotenv
