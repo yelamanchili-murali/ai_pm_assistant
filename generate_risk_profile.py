@@ -19,12 +19,23 @@ token_provider = get_bearer_token_provider(
 )
 
 # Set your OpenAI and Azure Cosmos credentials
-azOpenAIClient = AzureOpenAI(
-  azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT"),  
-#  azure_ad_token_provider=token_provider,
-  api_key = os.getenv("AZURE_APIM_SUBSCRIPTION_KEY"),
-  api_version = os.getenv("AZURE_OPENAI_API_VERSION")
-)
+azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+api_key = os.getenv("API_KEY")
+api_version = os.getenv("AZURE_OPENAI_API_VERSION")
+use_apim = os.getenv("USE_APIM", "false").lower() == "true"
+
+if use_apim:
+    azOpenAIClient = AzureOpenAI(
+        azure_endpoint=azure_endpoint,
+        api_key=api_key,
+        api_version=api_version
+    )
+else:
+    azOpenAIClient = AzureOpenAI(
+        azure_endpoint=azure_endpoint,
+        azure_ad_token_provider=token_provider,
+        api_version=api_version
+    )
 
 cosmos_url = os.getenv("AZURE_COSMOSDB_URL")
 
