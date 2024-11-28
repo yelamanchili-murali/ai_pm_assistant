@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI PM Assistant</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        #chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            width: 100%;
+        }
+        #chat-history {
+            flex: 1;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+        #chat-history p {
+            margin: 10px 0;
+        }
+        .input-group {
+            width: 100%;
+        }
+        .spinner-border {
+            display: none;
+            margin-left: 10px;
+        }
+    </style>
+    <script>
+        async function sendMessage() {
+            const message = document.getElementById('message').value;
+            const spinner = document.getElementById('spinner');
+            spinner.style.display = 'inline-block'; // Show spinner
+            const startTime = performance.now(); // Start timer
+            const response = await fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: message })
+            });
+            const endTime = performance.now(); // End timer
+            const elapsedTime = (endTime - startTime).toFixed(2); // Calculate elapsed time
+            const data = await response.json();
+            const chatHistory = document.getElementById('chat-history');
+            chatHistory.innerHTML += `<p><strong>You:</strong> ${data.user_message}</p>`;
+            chatHistory.innerHTML += `<p><strong>Assistant:</strong>` + marked.parse(data.response) + `</p>`;
+            chatHistory.innerHTML += `<p><em>Response time: ${elapsedTime} ms</em></p>`; // Display elapsed time
+            document.getElementById('message').value = '';
+            chatHistory.scrollTop = chatHistory.scrollHeight; // Scroll to the bottom
+            spinner.style.display = 'none'; // Hide spinner
+        }
+    </script>
+</head>
+<body>
+    <div id="chat-container" class="container-fluid">
+        <h1 class="my-4 text-center">AI PM Assistant</h1>
+        <div id="chat-history" class="mb-3"></div>
+        <div class="input-group mb-3">
+            <input type="text" id="message" class="form-control" placeholder="Ask me about generating risk profiles for Projects!">
+            <div class="input-group-append">
+                <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+                <div id="spinner" class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

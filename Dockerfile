@@ -10,7 +10,6 @@ COPY LICENSE /app/
 COPY README.md /app/
 COPY requirements.txt /app/
 COPY startup.sh /app/
-COPY .env /app/
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt

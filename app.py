@@ -7,6 +7,7 @@ import gradio as gr
 import time
 from dotenv import load_dotenv
 import os
+from flask import Flask, request, jsonify, render_template
 
 load_dotenv()
 
@@ -139,35 +140,62 @@ def generate_risk_profile(project_description):
 
     return completion_response["choices"][0]["message"]["content"]
 
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/chat', methods=['POST'])
+def chat():
+    user_message = request.json.get('message')
+    start_time = time.time()
+    response_payload = generate_risk_profile(user_message)
+    end_time = time.time()
+    elapsed_time = round((end_time - start_time) * 1000, 2)
+    details = f"\n (Time: {elapsed_time}ms)"
+    response = {
+        "user_message": user_message,
+        "response": response_payload + details
+    }
+    return jsonify(response)
+
 # Example usage
 if __name__ == "__main__":
-    # Example project description
-    planned_project_description = """
-    Design and commissioning of new rolling stock trains for a metropolitan transit system. The project involves tight timelines, multiple stakeholders, and unionized labor.
-    """
+    app.run(host='0.0.0.0')
 
-    chat_history = []
 
-    with gr.Blocks(fill_height=True, fill_width=True) as demo:
-        chatbot = gr.Chatbot(label="AI PM Assistant", scale=5)
-        msg = gr.Textbox(label="Ask me about generating risk profiles for Projects!", scale=1)
-        clear = gr.Button("Clear", scale=0)
+    # # Example project description
+    # planned_project_description = """
+    # Design and commissioning of new rolling stock trains for a metropolitan transit system. The project involves tight timelines, multiple stakeholders, and unionized labor.
+    # """
 
-        def user(user_message, chat_history):
-            start_time = time.time()
-            response_payload = generate_risk_profile(user_message)
-            end_time = time.time()
-            elapsed_time = round((end_time - start_time) * 1000, 2)
-            details = f"\n (Time: {elapsed_time}ms)"
-            chat_history.append([user_message, response_payload + details])
+    # chat_history = []
+
+    # app = FastAPI()
+
+    # with gr.Blocks(fill_height=True, fill_width=True) as demo:
+    #     chatbot = gr.Chatbot(label="AI PM Assistant", scale=5)
+    #     msg = gr.Textbox(label="Ask me about generating risk profiles for Projects!", scale=1)
+    #     clear = gr.Button("Clear", scale=0)
+
+    #     def user(user_message, chat_history):
+    #         start_time = time.time()
+    #         response_payload = generate_risk_profile(user_message)
+    #         end_time = time.time()
+    #         elapsed_time = round((end_time - start_time) * 1000, 2)
+    #         details = f"\n (Time: {elapsed_time}ms)"
+    #         chat_history.append([user_message, response_payload + details])
             
-            return gr.update(value=""), chat_history
+    #         return gr.update(value=""), chat_history
         
-        msg.submit(user, [msg, chatbot], [msg, chatbot], queue=False)
-        clear.click(lambda: None, None, chatbot, queue=False)
+    #     msg.submit(user, [msg, chatbot], [msg, chatbot], queue=False)
+    #     clear.click(lambda: None, None, chatbot, queue=False)
 
-    # Launch the Gradio interface
-    demo.launch(debug=True)
+    # app = gr.mount_gradio_app(app, demo, path="/")
 
-    # Be sure to run this cell to close or restart the Gradio demo
-    demo.close()
+    # # Launch the Gradio interface
+    # demo.launch(debug=True)
+
+    # # Be sure to run this cell to close or restart the Gradio demo
+    # demo.close()
