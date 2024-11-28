@@ -61,7 +61,7 @@ pip install -r requirements.txt
 Run the Python script:
 
 ```sh
-python generate_risk_profile.py
+python app.py
 ```
 
 This will execute the script using the configuration specified in your .env file.
