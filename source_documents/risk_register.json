@@ -1,0 +1,385 @@
+[
+    {
+        "Allocation": {
+            "Project": "Rolling Stock Project",
+            "Status": "Open",
+            "Owner": "John Doe",
+            "Owner Organisation": "XYZ"
+        },
+        "Explanation": {
+            "Name": "Disruption to works caused by industrial action",
+            "Description": "Potential disruption to construction works caused by industrial action resulting in delays and increased costs.",
+            "Causes": [
+                "1) Union organisation stop work action."
+            ],
+            "Impacts": [
+                "1) Schedule delays, specifically design reviews, consultations and Testing & Commissioning.",
+                "2) Increased cost, specifically Supplier Extension of Time claims."
+            ]
+        },
+        "Timing": {
+            "Project Phase": "Delivery",
+            "Date Raised": "",
+            "Exposure Start": "2024-01-01 00:00:00",
+            "Exposure End": "2024-04-01 00:00:00"
+        },
+        "Categorisation": {
+            "Risk Breakdown Structure": "Industrial Relations",
+            "Workstream": "Program"
+        },
+        "Review": {
+            "Predicted Trend": "Deteriorating"
+        },
+        "Current Controls": {
+            "Control": [
+                "Union consultations throughout the delivery of the project, to ensure expectations are aligned and delivered."
+            ],
+            "Overall Control Effectiveness": "Partically Effective"
+        },
+        "Current Qualitative Scoring": {
+            "QRA Type": "Contingent",
+            "Current Consequence": "C3",
+            "Primary Consequence Category": "Project Delivery",
+            "Current Likelihood %": "0.8",
+            "Current Likelihood Rating": "L2",
+            "Current Rating": "High"
+        },
+        "Planned Actions": {
+            "Treatment Actions": [
+                "Analyse the impact to project based on the industrial actions.",
+                "Create a plan to reduce the impact to project."
+            ]
+        },
+        "Target Qualitative Scoring": {
+            "Target Consequence": "C4",
+            "Target Likelihood": "L2",
+            "Target Likelihood %": "0.8",
+            "Target Rating": "High",
+            "Target Resolution Date": "2024-02-01 00:00:00"
+        },
+        "Cost Risk Assessment": {
+            "Best Case": "1000000",
+            "Most Likely": "2000000",
+            "Worst Case": "3000000",
+            "Distribution Type": "Beta Pert",
+            "Basis of Cost Impact 3 Point Estimate": "Assumption: Industrial action will not exceed 3 months.\n\nCost justification: Based on Supplier's contract delay rate, at $1M / month.\n\nLikelihood: 80%\nBest case: 1 month delay = $1M\nMost likely case: 2 months delay = $2M\nWorst case: 3 months delay = $3M",
+            "EMV": "1600000"
+        },
+        "Scheduling Risk Assessment": {
+            "Best Case": "1 month",
+            "Most Likely": "2 months",
+            "Worst Case": "3 months",
+            "Critical Path": "Yes",
+            "P6 milestone": "Construction Complete",
+            "Basis of Schedule Impact 3 Point Estimate": "Based on the Industrial Action notice provided by the Union."
+        }
+    },
+    {
+        "Allocation": {
+            "Project": "Rolling Stock Project",
+            "Status": "Open",
+            "Owner": "John Doe",
+            "Owner Organisation": "XYZ"
+        },
+        "Explanation": {
+            "Name": "Disruption to Enabling Works construction caused by inclement weather.",
+            "Description": "Possible disruption to Enabling Works constuction caused by inclement weather resulting in schedule delays and increased costs.",
+            "Causes": [
+                "1) Inclement weather.",
+                "2) Unsafe conditions for construction."
+            ],
+            "Impacts": [
+                "1) Schedule delays, specifically updates to train simulator, Testing & Commissioning of trains, revenue service.",
+                "2) Increased cost due to re-planning of activities."
+            ]
+        },
+        "Timing": {
+            "Project Phase": "Delivery",
+            "Date Raised": "",
+            "Exposure Start": "2027-01-01 00:00:00",
+            "Exposure End": "2027-01-01 00:00:00"
+        },
+        "Categorisation": {
+            "Risk Breakdown Structure": "Inclement Weather",
+            "Workstream": "Enabling works"
+        },
+        "Review": {
+            "Predicted Trend": "Stable"
+        },
+        "Current Controls": {
+            "Control": [
+                "Contingent possessions booked"
+            ],
+            "Overall Control Effectiveness": "Effective"
+        },
+        "Current Qualitative Scoring": {
+            "QRA Type": "Contingent",
+            "Current Consequence": "C4",
+            "Primary Consequence Category": "Project Delivery",
+            "Current Likelihood %": "0.5",
+            "Current Likelihood Rating": "L3",
+            "Current Rating": "Medium"
+        },
+        "Planned Actions": {
+            "Treatment Actions": [
+                "Check weather conditions prior to construction activity and adjust schedule such that it reduces delays."
+            ]
+        },
+        "Target Qualitative Scoring": {
+            "Target Consequence": "C4",
+            "Target Likelihood": "L3",
+            "Target Likelihood %": "0.2",
+            "Target Rating": "Medium",
+            "Target Resolution Date": "2027-01-01 00:00:00"
+        },
+        "Cost Risk Assessment": {
+            "Best Case": "200000",
+            "Most Likely": "400000",
+            "Worst Case": "600000",
+            "Distribution Type": "Beta Pert",
+            "Basis of Cost Impact 3 Point Estimate": "Assumption: Contruction mainly scheduled in spring, which is the rainy season in NSW. Historically, 3 possessions are cancelled a year due to flooding a year. \n\nCost justification: Based on cost of remobilising workforce for a missed possession, at $200k / possession.\n\nLikelihood: 20%\nBest case: 1 missed possession = $200k\nMost likely case: 2 missed possession = $400k\nWorst case: 3 missed possession = $600k",
+            "EMV": "80000"
+        },
+        "Scheduling Risk Assessment": {
+            "Best Case": "1 week",
+            "Most Likely": "2 weeks",
+            "Worst Case": "4 weeks",
+            "Critical Path": "No",
+            "P6 milestone": "Construction Complete",
+            "Basis of Schedule Impact 3 Point Estimate": "Depending on the missed possession it may not impact critical path."
+        }
+    },
+    {
+        "Allocation": {
+            "Project": "Rolling Stock Project",
+            "Status": "Open",
+            "Owner": "John Doe",
+            "Owner Organisation": "XYZ"
+        },
+        "Explanation": {
+            "Name": "Approved budget is insufficient to deliver program of works.",
+            "Description": "Approved budget is potentially inadequate to program of works, caused by various factors such as additional scope, delays, etc.",
+            "Causes": [
+                "1) Lack of stakeholder consultation, resulting in re-design.",
+                "2) Lack of financial management monitoing, leading to overspend.",
+                "3) Lack of risk and issue contingency planning utilised.",
+                "4) Scope creep.",
+                "5) Delays to program, extra costs to hold resources."
+            ],
+            "Impacts": [
+                "1) Schedule delays, while requesting for additional funding.",
+                "2) Increased costs.",
+                "3) Potentially reduced benefit realisation."
+            ]
+        },
+        "Timing": {
+            "Project Phase": "Delivery",
+            "Date Raised": "",
+            "Exposure Start": "2024-01-01 00:00:00",
+            "Exposure End": "2027-01-01 00:00:00"
+        },
+        "Categorisation": {
+            "Risk Breakdown Structure": "Financial",
+            "Workstream": "Program"
+        },
+        "Review": {
+            "Predicted Trend": "Stable"
+        },
+        "Current Controls": {
+            "Control": [
+                "Regular review of budget and forecasts.",
+                "Bi-annual estimation of contingency requirements.",
+                "Approved program of works."
+            ],
+            "Overall Control Effectiveness": "Effective"
+        },
+        "Current Qualitative Scoring": {
+            "QRA Type": "Contingent",
+            "Current Consequence": "C4",
+            "Primary Consequence Category": "Project Delivery",
+            "Current Likelihood %": "0.3",
+            "Current Likelihood Rating": "L3",
+            "Current Rating": "Medium"
+        },
+        "Planned Actions": {
+            "Treatment Actions": [
+                "Monitor spending and track against budget."
+            ]
+        },
+        "Target Qualitative Scoring": {
+            "Target Consequence": "C4",
+            "Target Likelihood": "L4",
+            "Target Likelihood %": "0.1",
+            "Target Rating": "Medium",
+            "Target Resolution Date": "2026-06-01 00:00:00"
+        },
+        "Cost Risk Assessment": {
+            "Best Case": "2000000",
+            "Most Likely": "5000000",
+            "Worst Case": "10000000",
+            "Distribution Type": "Beta Pert",
+            "Basis of Cost Impact 3 Point Estimate": "Assumption: No major re-work or scope creep.\n\nCost justification: Based on historical data of cost overruns. Contract value = $100M\n\nLikelihood: 10%\nBest Case: 2% of contract value = $2M\nMost likely case: 5% of contract value = $5M\nWorst case: 10% of contract value = $10M",
+            "EMV": "500000"
+        },
+        "Scheduling Risk Assessment": {
+            "Best Case": "",
+            "Most Likely": "",
+            "Worst Case": "",
+            "Critical Path": "",
+            "P6 milestone": "",
+            "Basis of Schedule Impact 3 Point Estimate": ""
+        }
+    },
+    {
+        "Allocation": {
+            "Project": "Rolling Stock Project",
+            "Status": "Open",
+            "Owner": "John Doe",
+            "Owner Organisation": "XYZ"
+        },
+        "Explanation": {
+            "Name": "Unable to achieve safety accreditation",
+            "Description": "Safety accreditation is not achieved due to insufficient assurance documentation and/or lack of safety argument (SFAIRP - so far as is reasonably possible).",
+            "Causes": [
+                "1) Insufficient assurance documentation.",
+                "2) Cannot reach SFAIRP safety argument.",
+                "3) Lack of stakeholder consultations leading to gaps in assurance."
+            ],
+            "Impacts": [
+                "1) Possible re-design leading to additional costs.",
+                "2) Delays to project, while documents are produced."
+            ]
+        },
+        "Timing": {
+            "Project Phase": "Delivery",
+            "Date Raised": "",
+            "Exposure Start": "2026-06-01 00:00:00",
+            "Exposure End": "2027-01-01 00:00:00"
+        },
+        "Categorisation": {
+            "Risk Breakdown Structure": "External Interfaces & Approvals",
+            "Workstream": "Program"
+        },
+        "Review": {
+            "Predicted Trend": "Stable"
+        },
+        "Current Controls": {
+            "Control": [
+                "Progressive assurance with safety accreditor."
+            ],
+            "Overall Control Effectiveness": "Effective"
+        },
+        "Current Qualitative Scoring": {
+            "QRA Type": "Contingent",
+            "Current Consequence": "C3",
+            "Primary Consequence Category": "Project Delivery",
+            "Current Likelihood %": "0.2",
+            "Current Likelihood Rating": "L3",
+            "Current Rating": "High"
+        },
+        "Planned Actions": {
+            "Treatment Actions": [
+                "Build on the previous Operating Models of existing trains to reach SFAIRP."
+            ]
+        },
+        "Target Qualitative Scoring": {
+            "Target Consequence": "C4",
+            "Target Likelihood": "L3",
+            "Target Likelihood %": "0.1",
+            "Target Rating": "Medium",
+            "Target Resolution Date": "2027-01-01 00:00:00"
+        },
+        "Cost Risk Assessment": {
+            "Best Case": "300000",
+            "Most Likely": "1200000",
+            "Worst Case": "2400000",
+            "Distribution Type": "Beta Pert",
+            "Basis of Cost Impact 3 Point Estimate": "Assumption: Cost considers delays only. \n\nCost justification: Based on internal resource burn rate at $300k/week. \n\nLikelihood: 10%\nBest case: 1 week = $300k\nMost likely case: 1 month = $1.2M\nWorst case: 2 months = $2.4M",
+            "EMV": "120000"
+        },
+        "Scheduling Risk Assessment": {
+            "Best Case": "1 week",
+            "Most Likely": "1 month",
+            "Worst Case": "2 months",
+            "Critical Path": "Yes",
+            "P6 milestone": "Safety accreditation",
+            "Basis of Schedule Impact 3 Point Estimate": "Best case is that some documents require amending, ranging to missing documents that need to be produced."
+        }
+    },
+    {
+        "Allocation": {
+            "Project": "Rolling Stock Project",
+            "Status": "Open",
+            "Owner": "John Doe",
+            "Owner Organisation": "XYZ"
+        },
+        "Explanation": {
+            "Name": "Latent conditions",
+            "Description": "Discovery of unknown utilities and/or contamination, resulting in extra work (e.g. removing contamination).",
+            "Causes": [
+                "1) Discovery of unknown utilities and / or services.",
+                "2) Discovery of contamination."
+            ],
+            "Impacts": [
+                "1) Additional costs and possible delays to project."
+            ]
+        },
+        "Timing": {
+            "Project Phase": "Delivery",
+            "Date Raised": "",
+            "Exposure Start": "2026-01-01 00:00:00",
+            "Exposure End": "2026-12-01 00:00:00"
+        },
+        "Categorisation": {
+            "Risk Breakdown Structure": "Latent Conditions",
+            "Workstream": "Enabling works"
+        },
+        "Review": {
+            "Predicted Trend": "Stable"
+        },
+        "Current Controls": {
+            "Control": [
+                "Early Works included surveys of construction location.",
+                "Brownfield construction locations. ",
+                "Utility plans acquired."
+            ],
+            "Overall Control Effectiveness": "Effective"
+        },
+        "Current Qualitative Scoring": {
+            "QRA Type": "Contingent",
+            "Current Consequence": "C5",
+            "Primary Consequence Category": "Project Delivery",
+            "Current Likelihood %": "0.4",
+            "Current Likelihood Rating": "L3",
+            "Current Rating": "Medium"
+        },
+        "Planned Actions": {
+            "Treatment Actions": [
+                "Ensure utility plans are up to date."
+            ]
+        },
+        "Target Qualitative Scoring": {
+            "Target Consequence": "C5",
+            "Target Likelihood": "L5",
+            "Target Likelihood %": "0.04",
+            "Target Rating": "Low",
+            "Target Resolution Date": "2026-01-01 00:00:00"
+        },
+        "Cost Risk Assessment": {
+            "Best Case": "300000",
+            "Most Likely": "1500000",
+            "Worst Case": "3000000",
+            "Distribution Type": "Beta Pert",
+            "Basis of Cost Impact 3 Point Estimate": "Cost justification: Based on average cost of removing contamination is $100k and to move utilities is $200k.\n\nLikelihood: 4%\nBest case: Discovery of 1 contamination and 1 utility = $300k\nMost likely case: 5 of each = $1.5M\nWorse case: 10 of each = $3M",
+            "EMV": "60000"
+        },
+        "Scheduling Risk Assessment": {
+            "Best Case": "",
+            "Most Likely": "",
+            "Worst Case": "",
+            "Critical Path": "",
+            "P6 milestone": "",
+            "Basis of Schedule Impact 3 Point Estimate": ""
+        }
+    }
+]
